@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import { incremented } from './features/Counter/counter'
+import { amountAdded, incremented } from './features/Counter/counter'
 import { useAppDispatch, useAppSelector } from './app/hooks'
 import './App.css'
 
@@ -10,6 +10,10 @@ function App() {
 
   const handleClick = () => {
     dispatch(incremented())
+  }
+
+  const secondHandleClick = () => {
+    dispatch(amountAdded(3))
   }
 
   return (
@@ -24,12 +28,17 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
+        <h4>Increment by 1</h4>
+        <h3>{count}</h3>
         <button onClick={handleClick}>
-          count is {count}
+          increment
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+        <hr />
+        <h4>Increment by 3</h4>
+        <h3>{count}</h3>
+        <button onClick={secondHandleClick}>
+          increment
+        </button>
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
