@@ -19,11 +19,11 @@ function Counter() {
     }
 
     const secondHandleClick = () => {
-        dispatch(amountAdded(3))
+        dispatch(amountAdded(10))
     }
 
     return (
-        <div className="counter">
+        <div className="box">
             <div className="counter-value">
                 <h2>Count is current: {count}</h2>
             </div>
