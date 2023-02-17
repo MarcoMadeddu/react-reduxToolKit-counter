@@ -23,10 +23,9 @@ function Counter() {
     }
 
     return (
-        <div className="box">
-            <div className="counter-value">
-                <h2>Count is current: {count}</h2>
-            </div>
+        <div className="box txt-center">
+            <h2 >COUNTER</h2>
+            <h5>Count is current: {count}</h5>
             <div className="button-container">
                 <button onClick={handleClick}>
                     increment

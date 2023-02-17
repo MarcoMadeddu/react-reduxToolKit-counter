@@ -12,18 +12,14 @@ export type cartState = {
 
 export const cartMock: element[] = [
     {
-        name: 'first',
-        price: 4
-    },
-    {
-        name: 'second',
-        price: 1
+        name: 'mela',
+        price: 2
     },
 ]
 
 const initialState: cartState = {
     elements: cartMock,
-    total: 5
+    total: 2
 }
 
 
@@ -32,13 +28,14 @@ const cartSlice = createSlice({
     name: 'cart',
     initialState,
     reducers: {
-        addElement(state, action: PayloadAction<cartState>) {
-            state.total += action.payload.total;
-            state.elements = [...state.elements, ...action.payload.elements]
-        }
+        addSingleElement(state, action: PayloadAction<element>) {
+            const newItem: element = { name: action.payload.name, price: action.payload.price }
+            state.total += action.payload.price;
+            state.elements = [...state.elements, newItem]
+        },
     }
 })
 
-export const { addElement } = cartSlice.actions;
+export const { addSingleElement } = cartSlice.actions;
 export default cartSlice.reducer;
 
